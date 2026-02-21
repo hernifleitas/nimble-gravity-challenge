@@ -8,19 +8,11 @@ function JobItem({ job, candidate }) {
     const [error, setError] = useState(null);
 
     const handleSubmit = async () => {
-        console.log("handleSubmit ejecutado");
         setLoading(true);
         setError(null);
         setSuccess(false);
 
         try {
-            console.log({
-                uuid: candidate.uuid,
-                jobId: job.id,
-                candidateId: candidate.candidateId,
-                applicationId: candidate.applicationId,
-                repoUrl
-            });
             await applyToJob({
                 uuid: candidate.uuid,
                 jobId: job.id,
